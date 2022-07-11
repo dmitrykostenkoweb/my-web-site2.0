@@ -1,12 +1,13 @@
 export interface ThemeState {
-    currentMode: Theme
+    currentMode: ThemeMods
 }
 
 export interface UseTheme {
-    changeTheme: () => void
+    changeThemeMod: () => void
+    getThemeMode: () => ThemeMods
 }
 
-export enum Theme {
+export enum ThemeMods {
     dark = 'DARK',
     light = 'LIGHT'
 }

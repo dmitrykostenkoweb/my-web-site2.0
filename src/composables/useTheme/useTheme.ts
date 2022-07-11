@@ -1,22 +1,23 @@
-import {Theme, ThemeState, UseTheme} from "@src/composables/useTheme/useTheme.model";
 import {reactive} from "vue";
-
+import {ThemeMods, ThemeState, UseTheme} from "@/composables/useTheme/useTheme.model";
 
 const state: ThemeState = reactive({
-    currentMode: Theme.dark
+    currentMode: ThemeMods.dark
 })
 
-
 export default function useTheme(): UseTheme {
-    const changeTheme = (): void => {
-        if (state.currentMode === Theme.dark) {
-            state.currentMode = Theme.light
-        } else {
-            state.currentMode = Theme.dark
-        }
+    const getThemeMode = (): ThemeMods => state.currentMode
 
+    const changeThemeMod = (): void => {
+        if (state.currentMode === ThemeMods.dark) {
+            state.currentMode = ThemeMods.light
+        } else {
+            state.currentMode = ThemeMods.dark
+        }
     }
     return {
-        changeTheme,
+        changeThemeMod,
+        getThemeMode
+
     }
 }

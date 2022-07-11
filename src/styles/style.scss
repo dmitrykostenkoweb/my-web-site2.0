@@ -1,5 +1,6 @@
 @import "./_variables.scss";
 @import "./_animation.scss";
+@import "./_mixins.scss";
 
 
 * {
@@ -89,4 +90,12 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: 400;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
 }
